@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Portafolio digital de Carlos Lamas - Ingeniero Mecánico especialista en CAD, análisis estructural y mantenimiento industrial. Disponible para nuevas oportunidades.">
+    <meta name="keywords"
+        content="ingeniero mecánico, CAD, SolidWorks, AutoCAD, mantenimiento, análisis estructural, Valencia, España">
+    <meta name="author" content="Carlos Lamas">
+
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#0057B7">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Carlos Lamas">
+
+    <!-- PWA Icons -->
+    <link rel="apple-touch-icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>">
+    <link rel="mask-icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://carloslamas.dev">
+    <meta property="og:title" content="Carlos Lamas - Ingeniero Mecánico">
+    <meta property="og:description"
+        content="🔧 Ingeniero Mecánico multidisciplinar | CAD | Mantenimiento | Energía | Proyectos Técnicos">
+    <meta property="og:image" content="imgs/profile_photo_6.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://carloslamas.dev">
+    <meta property="twitter:title" content="Carlos Lamas - Ingeniero Mecánico">
+    <meta property="twitter:description"
+        content="🔧 Ingeniero Mecánico multidisciplinar | CAD | Mantenimiento | Energía | Proyectos Técnicos">
+    <meta property="twitter:image" content="imgs/profile_photo_6.jpg">
+
+    <title>Carlos Lamas | Ingeniero Mecánico</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚙️</text></svg>">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animations.css">
+</head>
+
+<body>
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress">
+        <div class="scroll-progress-bar"></div>
+    </div>
+
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-content">
+            <div class="preloader-visual">
+                <div class="energy-ring ring-1"></div>
+                <div class="energy-ring ring-2"></div>
+                <div class="energy-ring ring-3"></div>
+                <div class="preloader-gear-container">
+                    <svg viewBox="0 0 100 100" class="preloader-gear">
+                        <circle cx="50" cy="50" r="30" class="gear-circle" />
+                        <g class="gear-teeth">
+                            <rect x="45" y="5" width="10" height="15" class="gear-tooth" />
+                            <rect x="45" y="80" width="10" height="15" class="gear-tooth" />
+                            <rect x="5" y="45" width="15" height="10" class="gear-tooth" />
+                            <rect x="80" y="45" width="15" height="10" class="gear-tooth" />
+                            <rect x="15" y="15" width="12" height="12" class="gear-tooth"
+                                transform="rotate(45 21 21)" />
+                            <rect x="73" y="73" width="12" height="12" class="gear-tooth"
+                                transform="rotate(45 79 79)" />
+                            <rect x="73" y="15" width="12" height="12" class="gear-tooth"
+                                transform="rotate(-45 79 21)" />
+                            <rect x="15" y="73" width="12" height="12" class="gear-tooth"
+                                transform="rotate(-45 21 79)" />
+                        </g>
+                    </svg>
+                </div>
+            </div>
+            <div class="preloader-info">
+                <h2 class="preloader-title">Carlos Lamas</h2>
+                <div class="loading-container">
+                    <div class="loading-bar-wrapper">
+                        <div class="loading-progress"></div>
+                    </div>
+                    <p class="loading-status">Inicializando sistema...</p>
+                </div>
+            </div>
+        </div>
+        <div class="preloader-bg-overlay"></div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Particle Background -->
+    <canvas id="particles-canvas"></canvas>
+
+    <header>
+        <nav class="nav">
+            <div class="nav-container">
+                <a href="#" class="nav-logo">
+                    <span class="logo-text">CL</span>
+                    <span class="logo-subtitle">Portfolio</span>
+                </a>
+
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link" data-translate="nav-home">Inicio</a></li>
+                    <li><a href="#about" class="nav-link" data-translate="nav-about">Acerca</a></li>
+                    <li><a href="#experience" class="nav-link" data-translate="nav-experience">Experiencia</a></li>
+                    <li><a href="#education" class="nav-link" data-translate="nav-education">Educación</a></li>
+                    <li><a href="#skills" class="nav-link" data-translate="nav-skills">Habilidades</a></li>
+                    <!-- Proyect <li><a href="#projects" class="nav-link" data-translate="nav-projects">Proyectos</a></li>-->
+                    <li><a href="#contact" class="nav-link" data-translate="nav-contact">Contacto</a></li>
+                </ul>
+
+                <div class="nav-controls">
+                    <!-- Language Toggle -->
+                    <div class="language-toggle">
+                        <button class="lang-btn " data-lang="es" title="Español"
+                            aria-label="Cambiar a Español">ES</button>
+                        <button class="lang-btn" data-lang="en" title="English"
+                            aria-label="Switch to English">EN</button>
+                    </div>
+
+                    <!-- Theme Toggle -->
+                    <button class="theme-toggle" title="Toggle Dark Mode" aria-label="Alternar modo oscuro">
+                        <svg class="sun" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                        <svg class="moon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                    </button>
+
+                    <!-- Mobile Menu Toggle -->
+                    <button class="mobile-menu-toggle" title="Menu" aria-label="Abrir menú">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <!-- Floating Elements -->
+            <div class="floating-element floating-card" style="top: 10%; right: -20%;">
+                <i class="fas fa-cog fa-spin"></i>
+                <!-- Floating Elements span data-translate="hero-availability">Disponible</span>-->
+                < </div>
+                    <div class="floating-element floating-card" style="bottom: 20%; left: -15%;">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span data-translate="hero-location">Valencia, ES</span>
+                    </div>
+                    <div class="floating-element floating-card" style="top: 50%; right: -25%;">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span data-translate="hero-education">Ingeniero</span>
+                    </div>
+
+                    <div class="hero-container">
+                        <div class="hero-content">
+                            <!--<div class="hero-badge animate-on-scroll">
+                    <i class="fas fa-sparkles"></i>
+                    <span data-translate="hero-badge">Disponible para nuevas oportunidades</span>
+                </div>-->
+
+                            <p class="hero-greeting " data-translate="hero-greeting">Hola, soy</p>
+                            <h1 class="preloader-title letter-by-letter">
+                                <span>C</span><span>a</span><span>r</span><span>l</span><span>o</span><span>s</span>
+                                <span>L</span><span>a</span><span>m</span><span>a</span><span>s</span>
+                            </h1>
+                            <div class="hero-subtitle-container animate-on-scroll">
+                                <h2 class="hero-subtitle" data-translate="hero-title">Ingeniero Mecánico</h2>
+                            </div>
+
+                            <p class="hero-description animate-on-scroll" data-translate="hero-description">
+                                Ingeniero Mecánico especializado en diseño CAD, análisis estructural y control de
+                                calidad.
+                                Gestor de proyectos de energía renovable y mantenimiento con enfoque en la fiabilidad y
+                                seguridad de activos industriales.
+                            </p>
+
+                            <div class="hero-cta animate-on-scroll">
+                                <a href="#experience" class="btn btn-primary cta-primary"
+                                    data-translate="hero-cta-primary">
+                                    <span>Ver Mi Experiencia</span>
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                                <a href="cv/CV Carlos Lamas.pdf" class="btn btn-secondary cta-secondary" download
+                                    data-translate="hero-cta-secondary">
+                                    <span>Descargar CV</span>
+                                    <i class="fas fa-download"></i>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="hero-image animate-on-scroll">
+                            <div class="image-wrapper">
+                                <div class="hero-ring-decoration">
+                                    <svg viewBox="0 0 100 100">
+                                        <circle cx="50" cy="50" r="48" fill="none" stroke="currentColor"
+                                            stroke-width="0.5" stroke-dasharray="2 4" />
+                                    </svg>
+                                </div>
+                                <div class="image-container">
+                                    <img src="imgs/profile_photo_6.jpg" alt="Carlos Lamas - Ingeniero Mecánico"
+                                        class="hero-profile-img">
+                                    <div class="image-overlay">
+                                        <!--<div class="status-indicator online">
+                                            <span class="status-dot"></span>
+                                            <span class="status-text"
+                                                data-translate="hero-availability">Disponible</span>-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </section>
+
+
+        <!-- About Section -->
+        <section id="about" class="section about">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll" data-translate="about-title">Acerca de Mí</h2>
+                <p class="section-subtitle animate-on-scroll" data-translate="about-subtitle">Conoce más sobre mi
+                    trayectoria profesional</p>
+
+                <div class="about-grid">
+                    <div class="about-content animate-on-scroll">
+                        <div class="about-intro">
+                            <h3 data-translate="about-intro-title">Ingeniero Mecánico Especialista en Calidad y
+                                Mantenimiento</h3>
+                            <p class="about-text" data-translate="about-text-1">
+                                Como ingeniero mecánico especializado en diseño CAD, análisis estructural y control de
+                                calidad, me enfoco en maximizar la fiabilidad y seguridad de activos industriales
+                                mediante la ingeniería de mantenimiento y gestión operativa.
+                            </p>
+                            <p class="about-text" data-translate="about-text-2">
+                                He desarrollado mi carrera en sectores clave como la educación superior y la industria
+                                de válvulas, especializándome en la gestión de proyectos de energía renovable y sistemas
+                                mecánicos complejos bajo normas ISO 9001.
+                            </p>
+                        </div>
+
+                        <div class="about-stats">
+                            <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+                                <div class="stat-icon">
+                                    <i class="fas fa-calendar-alt"></i>
+                                </div>
+                                <div class="stat-number" data-translate="about-stat-1-number">5+</div>
+                                <div class="stat-label" data-translate="about-stat-1-label">Años de Experiencia</div>
+                            </div>
+                            <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                                <div class="stat-icon">
+                                    <i class="fas fa-tasks"></i>
+                                </div>
+                                <div class="stat-number" data-translate="about-stat-2-number">10+</div>
+                                <div class="stat-label" data-translate="about-stat-2-label">Proyectos Completados</div>
+                            </div>
+                            <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+                                <div class="stat-icon">
+                                    <i class="fas fa-globe"></i>
+                                </div>
+                                <div class="stat-number" data-translate="about-stat-3-number">3</div>
+                                <div class="stat-label" data-translate="about-stat-3-label">Idiomas</div>
+                            </div>
+                            <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
+                                <div class="stat-icon">
+                                    <i class="fas fa-tools"></i>
+                                </div>
+                                <div class="stat-number" data-translate="about-stat-4-number">15+</div>
+                                <div class="stat-label" data-translate="about-stat-4-label">Habilidades Técnicas</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="about-image animate-on-scroll">
+                        <div class="image-grid">
+                            <img src="imgs/cad_design_1.jpg" alt="Diseño CAD - Carlos Lamas"
+                                class="about-img main-image">
+                            <img src="imgs/blueprint_2.jpg" alt="Planos técnicos" class="about-img secondary-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section experience">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll" data-translate="experience-title">Experiencia Profesional
+                </h2>
+                <p class="section-subtitle animate-on-scroll" data-translate="experience-subtitle">Mi trayectoria
+                    profesional y logros</p>
+
+                <div class="experience-timeline">
+                    <div class="experience-item animate-on-scroll">
+                        <div class="experience-card">
+                            <div class="card-header">
+                                <div class="experience-date" data-translate="experience-1-date">Marzo 2025 - Presente
+                                </div>
+                                <div class="card-actions">
+                                    <button class="card-action-btn" title="Más información">
+                                        <i class="fas fa-info-circle"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <h3 class="experience-title" data-translate="experience-1-title">Ingeniero de Calidad</h3>
+                            <div class="experience-company" data-translate="experience-1-company">Borja Valves</div>
+                            <p class="experience-description" data-translate="experience-1-description">
+                                Gestión de operaciones diarias y supervisión de equipos. Control de inventarios, pedidos
+                                y reportes. Cumplimiento de protocolos de calidad/seguridad e implementación de sistemas
+                                ISO 9001.
+                            </p>
+
+
+                        </div>
+                    </div>
+
+                    <div class="experience-item animate-on-scroll">
+                        <div class="experience-card">
+                            <div class="card-header">
+                                <div class="experience-date" data-translate="experience-2-date">Enero 2023 - Septiembre
+                                    2024</div>
+                                <div class="card-actions">
+                                    <button class="card-action-btn" title="Más información">
+                                        <i class="fas fa-info-circle"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <h3 class="experience-title" data-translate="experience-2-title">Profesor de Ingeniería</h3>
+                            <div class="experience-company" data-translate="experience-2-company">Universidad Oscar
+                                Lucero</div>
+                            <p class="experience-description" data-translate="experience-2-description">
+                                Clases teóricas y prácticas sobre tecnología energética y sistemas renovables. Diseño de
+                                componentes mecánicos (CAD) y análisis de elementos finitos (FEA).
+                            </p>
+                            <!--<div class="experience-achievements">
+                                <h4>Materias impartidas:</h4>
+                                <ul>
+                                    <li>Clases teóricas/prácticas en Tecnología Energética</li>
+                                    <li>Dirección de proyectos en Sistemas Renovables</li>
+                                    <li>Diseño CAD avanzado y análisis FEA estructural</li>
+                                    <li>Supervisión de tesis e investigación sostenible</li>
+                                </ul>
+                            </div>
+                            <div class="experience-skills">
+                                <span class="skill-tag">CAD/FEA</span>
+                                <span class="skill-tag">Docencia</span>
+                                <span class="skill-tag">Termodinámica</span>
+                            </div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="section education">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll" data-translate="education-title">Educación</h2>
+                <p class="section-subtitle animate-on-scroll" data-translate="education-subtitle">Mi formación académica
+                    y
+                    certificaciones</p>
+
+                <div class="education-grid">
+                    <div class="education-card animate-on-scroll">
+                        <div class="card-image">
+                            <img src="imgs/blueprint_2.jpg" alt="Universitat Politècnica de València"
+                                class="education-img">
+                            <div class="card-badge">En curso</div>
+                        </div>
+                        <div class="education-year" data-translate="education-1-year">Julio 2025 - Presente</div>
+                        <h3 class="education-degree" data-translate="education-1-degree">Máster Universitario en
+                            Ingeniería del Mantenimiento</h3>
+                        <div class="education-institution" data-translate="education-1-institution">Universidad
+                            Politécnica de Valencia (UPV)</div>
+                        <p class="education-description" data-translate="education-1-description">
+                            Competencias avanzadas en gestión de fiabilidad (RAMS), mantenimiento predictivo, gestión
+                            económica y estrategias de mantenimiento industrial.
+                        </p>
+                        <div class="education-highlights">
+                            <div class="highlight-item">
+                                <i class="fas fa-star"></i>
+                                <span>Especialización en Mantenimiento Predictivo</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-microchip"></i>
+                                <span>Fiabilidad y Seguridad (RAMS)</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="education-card animate-on-scroll">
+                        <div class="card-image">
+                            <img src="imgs/maintenance_2.jpg" alt="Universidad Oscar Lucero" class="education-img">
+                            <div class="card-badge completed">Completado</div>
+                        </div>
+                        <div class="education-year" data-translate="education-2-year">Septiembre 2016 - Diciembre 2022
+                        </div>
+                        <h3 class="education-degree" data-translate="education-2-degree">Ingeniero Mecánico</h3>
+                        <div class="education-institution" data-translate="education-2-institution">Universidad Oscar
+                            Lucero, Holguín, Cuba</div>
+                        <p class="education-description" data-translate="education-2-description">
+                            Formación integral en diseño mecánico (CAD), análisis por elementos finitos (FEA), procesos
+                            de manufactura y termodinámica.
+                        </p>
+                        <div class="education-highlights">
+                            <div class="highlight-item">
+                                <i class="fas fa-award"></i>
+                                <span>Título Universitario Terminado</span>
+                            </div>
+                            <div class="highlight-item">
+                                <i class="fas fa-project-diagram"></i>
+                                <span>Especialista en Diseño Mecánico</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section skills">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll" data-translate="skills-title">Habilidades Técnicas</h2>
+                <p class="section-subtitle animate-on-scroll" data-translate="skills-subtitle">Competencias y
+                    especialidades
+                    profesionales</p>
+
+                <div class="skills-grid">
+                    <div class="skill-category animate-on-scroll">
+                        <div class="category-header">
+                            <h3 class="skill-category-title" data-translate="skills-1-title">Software CAD</h3>
+                            <div class="category-icon">
+                                <i class="fas fa-drafting-compass"></i>
+                            </div>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name" data-translate="skills-1-skill-1">SolidWorks -
+                                        Avanzado</span>
+                                    <span class="skill-level">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-level="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name" data-translate="skills-1-skill-2">Autodesk Inventor -
+                                        Avanzado</span>
+                                    <span class="skill-level">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-level="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name" data-translate="skills-1-skill-3">AutoCAD -
+                                        Intermedio</span>
+                                    <span class="skill-level">75%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-level="75"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-showcase">
+                            <img src="imgs/cad_software_1.jpg" alt="Software CAD" class="skills-image">
+                        </div>
+                    </div>
+
+                    <div class="skill-category animate-on-scroll">
+                        <div class="category-header">
+                            <h3 class="skill-category-title" data-translate="skills-2-title">Análisis y Simulación</h3>
+                            <div class="category-icon">
+                                <i class="fas fa-atom"></i>
+                            </div>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name" data-translate="skills-2-skill-1">Análisis
+                                        Estructural</span>
+                                    <span class="skill-level">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-level="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name" data-translate="skills-2-skill-2">Simulación y
+                                        Modelado</span>
+                                    <span class="skill-level">80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-level="80"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name" data-translate="skills-2-skill-3">Análisis por Elementos
+                                        Finitos (FEA)</span>
+                                    <span class="skill-level">75%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-level="75"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category animate-on-scroll">
+                        <div class="category-header">
+                            <h3 class="skill-category-title" data-translate="skills-3-title">Mantenimiento y Energía
+                            </h3>
+                            <div class="category-icon">
+                                <i class="fas fa-wrench"></i>
+                            </div>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name" data-translate="skills-3-skill-1">Mantenimiento
+                                        Industrial</span>
+                                    <span class="skill-level">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-level="90"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name" data-translate="skills-3-skill-2">Sistemas de Energía
+                                        Renovable</span>
+                                    <span class="skill-level">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-level="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name" data-translate="skills-3-skill-3">Termodinámica y Mecánica
+                                        de Fluidos</span>
+                                    <span class="skill-level">80%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-level="80"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="skill-showcase">
+                            <img src="imgs/maintenance_1.jpg" alt="Mantenimiento Industrial" class="skills-image">
+                        </div>
+                    </div>
+
+                    <div class="skill-category animate-on-scroll">
+                        <div class="category-header">
+                            <h3 class="skill-category-title" data-translate="skills-4-title">Gestión y Control</h3>
+                            <div class="category-icon">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                        </div>
+                        <div class="skills-list">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name" data-translate="skills-4-skill-1">ISO 9001 y Calidad</span>
+                                    <span class="skill-level">95%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-level="95"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name" data-translate="skills-4-skill-2">Control de
+                                        Procesos</span>
+                                    <span class="skill-level">85%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-level="85"></div>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <span class="skill-name" data-translate="skills-4-skill-3">Gestión Operativa</span>
+                                    <span class="skill-level">90%</span>
+                                </div>
+                                <div class="skill-bar">
+                                    <div class="skill-progress" data-level="90"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications" class="section certifications">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll" data-translate="certs-title">Cursos y Certificaciones</h2>
+                <p class="section-subtitle animate-on-scroll" data-translate="certs-subtitle">Formación complementaria y
+                    técnica</p>
+                <div class="cert-grid">
+                    <div class="cert-card animate-on-scroll">
+                        <div class="cert-icon"><i class="fas fa-server"></i></div>
+                        <div class="cert-info">
+                            <h3 class="cert-name" data-translate="cert-1-name">Mantenimiento de Centros de Procesos de
+                                Datos (CPD)</h3>
+                            <p class="cert-org">Agosto 2025</p>
+                            <p class="cert-description" data-translate="cert-1-description">Infraestructura eléctrica
+                                (SAI/UPS), climatización de precisión, normativa F-Gas y protocolos de alta
+                                disponibilidad (Tiers).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section (Nueva) 
+        <section id="projects" class="section projects">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll" data-translate="projects-title">Proyectos Destacados</h2>
+                <p class="section-subtitle animate-on-scroll" data-translate="projects-subtitle">Trabajos
+                    representativos de
+                    mi experiencia profesional</p>
+
+                <div class="projects-grid">
+                    <div class="project-card animate-on-scroll">
+                        <div class="project-image-container">
+                            <img src="imgs/office_background_5.jpg" alt="Sistema de Transporte Automatizado"
+                                class="project-image">
+                            <div class="project-overlay">
+                                <div class="project-actions">
+                                    <button class="project-action-btn" title="Ver detalles">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="project-action-btn" title="Ver código">
+                                        <i class="fab fa-github"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Sistema de Transporte Automatizado</h3>
+                            <p class="project-description">
+                                Diseño e implementación de un sistema automatizado de transporte para industria
+                                alimentaria,
+                                optimizando la eficiencia operacional en un 25%.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">SolidWorks</span>
+                                <span class="tech-tag">AutoCAD</span>
+                                <span class="tech-tag">FEA</span>
+                                <span class="tech-tag">Proyectos</span>
+                            </div>
+                            <div class="project-results">
+                                <div class="result-item">
+                                    <i class="fas fa-chart-line"></i>
+                                    <span>+25% eficiencia</span>
+                                </div>
+                                <div class="result-item">
+                                    <i class="fas fa-clock"></i>
+                                    <span>6 meses desarrollo</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="project-card animate-on-scroll">
+                        <div class="project-image-container">
+                            <img src="imgs/maintenance_engineering_2.jpg" alt="Programa de Mantenimiento Predictivo"
+                                class="project-image">
+                            <div class="project-overlay">
+                                <div class="project-actions">
+                                    <button class="project-action-btn" title="Ver detalles">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="project-action-btn" title="Ver documento">
+                                        <i class="fas fa-file-pdf"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Programa de Mantenimiento Predictivo</h3>
+                            <p class="project-description">
+                                Desarrollo de un programa integral de mantenimiento predictivo para equipos
+                                industriales,
+                                reduciendo costos de mantenimiento en un 30%.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Mantenimiento</span>
+                                <span class="tech-tag">Análisis Vibracional</span>
+                                <span class="tech-tag">Gestión de Activos</span>
+                            </div>
+                            <div class="project-results">
+                                <div class="result-item">
+                                    <i class="fas fa-dollar-sign"></i>
+                                    <span>-30% costos</span>
+                                </div>
+                                <div class="result-item">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>+40% confiabilidad</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card animate-on-scroll">
+                        <div class="project-image-container">
+                            <img src="imgs/blueprint_2.jpg" alt="Optimización de Procesos Productivos"
+                                class="project-image">
+                            <div class="project-overlay">
+                                <div class="project-actions">
+                                    <button class="project-action-btn" title="Ver detalles">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="project-action-btn" title="Ver presentación">
+                                        <i class="fas fa-presentation"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Optimización de Procesos Productivos</h3>
+                            <p class="project-description">
+                                Rediseño y optimización de procesos productivos en planta de procesamiento, mejorando la
+                                productividad y reduciendo desperdicios.
+                            </p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Lean Manufacturing</span>
+                                <span class="tech-tag">Six Sigma</span>
+                                <span class="tech-tag">Análisis de Datos</span>
+                                <span class="tech-tag">Procesos</span>
+                            </div>
+                            <div class="project-results">
+                                <div class="result-item">
+                                    <i class="fas fa-arrow-up"></i>
+                                    <span>+35% productividad</span>
+                                </div>
+                                <div class="result-item">
+                                    <i class="fas fa-recycle"></i>
+                                    <span>-20% desperdicios</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>-->
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact">
+            <div class="container">
+                <h2 class="section-title animate-on-scroll" data-translate="contact-title">Contacto</h2>
+                <p class="section-subtitle animate-on-scroll" data-translate="contact-subtitle">¿Tienes un proyecto en
+                    mente? Hablemos</p>
+
+                <div class="contact-content">
+                    <form class="contact-form animate-on-scroll" id="contactForm"
+                        action="https://formspree.io/f/mykkgqlw" method="POST" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name" class="form-label" data-translate="contact-name">Nombre</label>
+                                <div class="input-wrapper">
+                                    <input type="text" id="name" name="name" class="form-input"
+                                        data-translate-placeholder="contact-name" required>
+                                    <div class="input-icon">
+                                        <i class="fas fa-user"></i>
+                                    </div>
+                                </div>
+                                <div class="error-message"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" class="form-label" data-translate="contact-email">Correo
+                                    Electrónico</label>
+                                <div class="input-wrapper">
+                                    <input type="email" id="email" name="email" class="form-input"
+                                        data-translate-placeholder="contact-email" required>
+                                    <div class="input-icon">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                </div>
+                                <div class="error-message"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject" class="form-label" data-translate="contact-subject">Asunto</label>
+                            <div class="input-wrapper">
+                                <input type="text" id="subject" name="subject" class="form-input"
+                                    data-translate-placeholder="contact-subject" required>
+                                <div class="input-icon">
+                                    <i class="fas fa-tag"></i>
+                                </div>
+                            </div>
+                            <div class="error-message"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label" data-translate="contact-message">Mensaje</label>
+                            <div class="input-wrapper">
+                                <textarea id="message" name="message" class="form-textarea"
+                                    data-translate-placeholder="contact-message" required></textarea>
+                                <div class="input-icon">
+                                    <i class="fas fa-comment"></i>
+                                </div>
+                            </div>
+                            <div class="error-message"></div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary submit-btn" data-translate="contact-send">
+                                <span class="btn-text">Enviar Mensaje</span>
+                                <span class="btn-loader" style="display: none;">
+                                    <i class="fas fa-spinner fa-spin"></i>
+                                    Enviando...
+                                </span>
+                            </button>
+                        </div>
+                    </form>
+
+                    <div class="contact-info">
+                        <!-- Email -->
+                        <div class="contact-item animate-on-scroll">
+                            <a href="mailto:lamascpo@gmail.com" class="contact-card-link" target="_blank">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <h3 class="contact-title" data-translate="contact-info-1-title">Email</h3>
+                                <p class="contact-text" data-translate="contact-info-1-text">lamascpo@gmail.com</p>
+                                <button class="copy-btn" data-copy="lamascpo@gmail.com" title="Copiar email"
+                                    onclick="event.preventDefault(); copyToClipboard('lamascpo@gmail.com');">
+                                    <i class="fas fa-copy"></i>
+                                </button>
+                            </a>
+                        </div>
+
+                        <!-- Ubicación -->
+                        <div class="contact-item animate-on-scroll">
+                            <a href="https://www.google.com/maps/place/Valencia,+España/" class="contact-card-link"
+                                target="_blank">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <h3 class="contact-title" data-translate="contact-info-2-title">Ubicación</h3>
+                                <p class="contact-text" data-translate="contact-info-2-text">Dos de Mayo, 46920 Mislata
+                                    (Valencia)</p>
+                                <button class="map-btn" title="Ver en Google Maps">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </button>
+                            </a>
+
+
+                        </div>
+
+                        <!-- LinkedIn -->
+                        <div class="contact-item animate-on-scroll">
+                            <a href="https://linkedin.com/in/carlos-lamas-a75551150/" class="contact-card-link"
+                                target="_blank">
+                                <div class="contact-icon">
+                                    <i class="fab fa-linkedin"></i>
+                                </div>
+                                <h3 class="contact-title" data-translate="contact-info-3-title">LinkedIn</h3>
+                                <p class="contact-text" data-translate="contact-info-3-text">
+                                    linkedin.com/in/carlos-lamas
+                                </p>
+                                <button class="open-btn" title="Abrir en nueva pestaña">
+                                    <i class="fas fa-external-link-alt"></i>
+                                </button>
+                            </a>
+                        </div>
+
+                        <!-- Teléfono -->
+                        <div class="contact-item animate-on-scroll">
+                            <a href="https://wa.me/+34672867117" class="contact-card-link" target="_blank"
+                                title="Abrir en WhatsApp">
+                                <div class="contact-icon">
+                                    <i class="fa-brands fa-whatsapp"></i>
+
+                                </div>
+                                <h3 class="contact-title" data-translate="contact-info-4-title">Teléfono</h3>
+                                <p class="contact-text" data-translate="contact-info-4-text">+34 672 867 117</p>
+                                <!--<button class="copy-btn" data-copy="+34672867117" title="Copiar teléfono"
+                                onclick="copyToClipboard('+34672867117')">
+                                <i class="fas fa-copy"></i>-->
+
+                                </button>
+                            </a>
+
+
+
+                        </div>
+                    </div>
+                </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-main">
+                <div class="footer-logo">
+                    <span class="logo-text">CL</span>
+                    <span class="logo-subtitle">Carlos Lamas</span>
+                </div>
+                <p class="footer-text" data-translate="footer-text">
+                    Gracias por visitar mi portafolio. Siempre estoy interesado en nuevas oportunidades y proyectos
+                    emocionantes.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <div class="footer-section">
+                    <h4>Navegación</h4>
+                    <ul>
+                        <li><a href="#home" data-translate="nav-home">Inicio</a></li>
+                        <li><a href="#about" data-translate="nav-about">Acerca de</a></li>
+                        <li><a href="#experience" data-translate="nav-experience">Experiencia</a></li>
+                        <li><a href="#skills" data-translate="nav-skills">Habilidades</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><a href="mailto:lamascpo@gmail.com">Email</a></li>
+                        <li><a href="tel:+34672867117">Teléfono</a></li>
+                        <li><a href="https://linkedin.com/in/carlos-lamas-a75551150/" target="_blank">LinkedIn</a></li>
+                        <li><a href="#contact">Formulario</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Recursos</h4>
+                    <ul>
+                        <li><a href="cv/CV Carlos Lamas.pdf" download>Descargar CV</a></li>
+                        <li><a href="#" onclick="window.print()">Imprimir CV</a></li>
+                        <!-- <li><a href="#" id="shareProfile">Compartir Perfil</a></li>
+                        <li><a href="#" id="installApp">Instalar App</a></li> -->
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <a href="https://linkedin.com/in/carlos-lamas-a75551150/" class="social-link" target="_blank"
+                        rel="noopener" title="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/lamascr" class="social-link" target="_blank" rel="noopener"
+                        title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="mailto:lamascpo@gmail.com" class="social-link" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="tel:+34672867117" class="social-link" title="Teléfono">
+                        <i class="fas fa-phone"></i>
+                    </a>
+                </div>
+
+                <div class="footer-credits">
+                    <p class="footer-copyright" data-translate="footer-copyright">
+                        © 2025 Carlos Lamas. Todos los derechos reservados.
+                    </p>
+                    <p class="footer-powered">
+                        Hecho con <i class="fas fa-heart"></i> por Carlos Lamas
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button class="scroll-to-top" id="scrollToTop" title="Volver arriba">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="app.js"></script>
+
+    <!-- Service Worker Registration -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        console.log('SW registered: ', registration);
+                    })
+                    .catch(registrationError => {
+                        console.log('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+    </script>
+
+    <!-- Keyboard Shortcuts Help (Hidden) -->
+    <div style="display: none;" id="keyboardShortcuts">
+        <p><strong>Atajos de Teclado:</strong></p>
+        <ul>
+            <li><kbd>Ctrl/Cmd</kbd> + <kbd>D</kbd>: Toggle Dark Mode</li>
+            <li><kbd>Ctrl/Cmd</kbd> + <kbd>L</kbd>: Toggle Idioma</li>
+            <li><kbd>Escape</kbd>: Cerrar menú móvil</li>
+            <li><kbd>Home</kbd>: Ir al inicio</li>
+            <li><kbd>End</kbd>: Ir al final</li>
+            <li><kbd>Ctrl/Cmd</kbd> + <kbd>S</kbd>: Imprimir página</li>
+        </ul>
+    </div>
+</body>
+
+</html>

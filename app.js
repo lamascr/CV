@@ -922,6 +922,24 @@ function initToastNotifications() {
 // COPY TO CLIPBOARD
 // ============================================
 function initCopyToClipboard() {
+    // Definir función global para llamadas inline como la del HTML
+    window.copyToClipboard = async function (text) {
+        if (!text) return;
+        try {
+            await navigator.clipboard.writeText(text);
+            if (window.showToast) {
+                window.showToast('Copiado al portapapeles', 'success');
+            }
+            return true;
+        } catch (err) {
+            console.error('Error al copiar: ', err);
+            if (window.showToast) {
+                window.showToast('Error al copiar al portapapeles', 'error');
+            }
+            return false;
+        }
+    };
+
     const copyButtons = document.querySelectorAll('.copy-btn');
 
     copyButtons.forEach(btn => {

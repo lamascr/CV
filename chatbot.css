@@ -1,73 +1,78 @@
 /* ============================================
-   N8N CHATBOT CUSTOM STYLES
-   Adapting to Carlos Lamas Portfolio Aesthetics
+   N8N CHATBOT CUSTOM STYLES - Carlos Lamas
+   Multi-Theme Compatibility & Glassmorphism
    ============================================ */
 
 :root {
-    /* Color mapping from portfolio palette */
-    --chat--color--primary: #3B82F6;
-    --chat--color--primary-shade-50: #2563EB;
-    --chat--color--primary--shade-100: #1D4ED8;
-
-    --chat--color--secondary: #0057B7;
+    /* N8N Base Overrides using Portfolio Tokens */
+    --chat--color--primary: var(--primary-500);
+    --chat--color--secondary: var(--primary-700);
     --chat--color--white: #ffffff;
-    --chat--color--dark: #0F172A;
+    --chat--color--dark: var(--page-background);
 
-    /* UI Adjustments */
     --chat--spacing: 0.8rem;
     --chat--border-radius: 16px;
     --chat--font-family: 'Inter', system-ui, -apple-system, sans-serif;
 
-    /* Window sizing */
-    --chat--window--width: 420px;
-    --chat--window--height: 500px;
-    --chat--window--z-index: 99999;
+    /* Configuración de ventana */
+    --chat--window--width: 400px;
+    --chat--window--height: 600px;
+    --chat--window--z-index: 100000;
 }
 
-/* Container positioning for bottom-right */
+/* Base Container Positioning - LEFT SIDE */
 .n8n-chat {
-    position: fixed !important;
+    z-index: var(--chat--window--z-index) !important;
+    left: 20px !important;
+    right: auto !important;
     bottom: 20px !important;
-    right: 20px !important;
-    width: var(--chat--window--width) !important;
-    height: var(--chat--window--height) !important;
-    z-index: 100000 !important;
-    display: block !important;
-    pointer-events: all !important;
+    position: fixed !important;
 }
 
-/* Hidden elements if mode is window without toggle */
+/* Window Wrapper alignment */
+.n8n-chat .chat-window-wrapper {
+    left: 20px !important;
+    right: auto !important;
+}
+
+/* Floating Toggle Button */
 .n8n-chat .chat-window-toggle {
-    display: none !important;
-}
-
-/* Ensure the window inside takes full container space */
-.n8n-chat .chat-window {
-    width: 100% !important;
-    height: 100% !important;
-    background: rgba(30, 41, 59, 0.85);
-    /* portfolio card-background tint */
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-    border-radius: 20px;
+    margin-left: 0 !important;
+    margin-right: auto !important;
     display: flex !important;
-    flex-direction: column !important;
-    position: relative !important;
+    background: var(--gradient-primary) !important;
+    box-shadow: var(--shadow-glow) !important;
+    border: 2px solid var(--glass-border) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
-/* Header Styling */
+.n8n-chat .chat-window-toggle:hover {
+    transform: scale(1.1) rotate(5deg) !important;
+    box-shadow: var(--shadow-glow-strong) !important;
+}
+
+/* Chat Window Aesthetics - Responsive to Themes */
+.n8n-chat .chat-window {
+    background: var(--glass-background) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    border: 1px solid var(--glass-border) !important;
+    box-shadow: var(--glass-shadow) !important;
+    border-radius: 20px;
+    overflow: hidden;
+    color: var(--text-primary) !important;
+    transition: background 0.3s, color 0.3s, border 0.3s !important;
+}
+
+/* Header */
 .n8n-chat .chat-header {
-    background: linear-gradient(to right, #1e293b, #0f172a);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 1.2rem;
+    background: var(--primary-500) !important;
+    color: #ffffff !important;
+    border-bottom: 1px solid var(--glass-border) !important;
 }
 
 .n8n-chat .chat-header h1 {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-    font-size: 1.1rem;
-    letter-spacing: 0.5px;
+    font-family: var(--font-heading) !important;
+    font-weight: 600 !important;
 }
 
 /* Messages Area */
@@ -77,65 +82,55 @@
 
 /* Bot Messages */
 .n8n-chat .chat-message.chat-message-from-bot {
-    background-color: rgba(255, 255, 255, 0.08) !important;
-    backdrop-filter: blur(5px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    color: #f1f5f9;
-    border-radius: 14px 14px 14px 0;
-    font-size: 0.95rem;
+    background-color: var(--primary-100) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--glass-border) !important;
+    border-radius: 14px 14px 14px 0 !important;
 }
 
 /* User Messages */
 .n8n-chat .chat-message.chat-message-from-user {
-    background: linear-gradient(135deg, #3B82F6, #1D4ED8) !important;
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.2);
-    color: #ffffff;
-    border-radius: 14px 14px 0 14px;
-    font-size: 0.95rem;
+    background: var(--gradient-primary) !important;
+    color: #ffffff !important;
+    border-radius: 14px 14px 0 14px !important;
+    box-shadow: var(--shadow-sm) !important;
 }
 
-/* Input Area */
+/* Footer / Input */
 .n8n-chat .chat-footer {
-    background: rgba(15, 23, 42, 0.9) !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.05);
-    padding: 0.8rem;
+    background: var(--surface-background) !important;
+    border-top: 1px solid var(--glass-border) !important;
+    padding: 0.8rem !important;
 }
 
 .n8n-chat .chat-inputs textarea {
+    background-color: var(--neutral-100) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--neutral-200) !important;
+    border-radius: 12px !important;
+    font-family: var(--font-body) !important;
+}
+
+/* Specific Adjustments for Dark Theme Visibility */
+[data-theme="dark"] .n8n-chat .chat-message.chat-message-from-bot {
     background-color: rgba(255, 255, 255, 0.05) !important;
     color: #ffffff !important;
-    border: 1px solid rgba(255, 255, 255, 0.1) !important;
-    border-radius: 10px !important;
-    padding: 10px 15px !important;
 }
 
-.n8n-chat .chat-inputs textarea::placeholder {
-    color: rgba(255, 255, 255, 0.4);
-}
-
-/* Send Button */
-.n8n-chat .chat-input-send-button {
-    background: transparent !important;
-    color: #3B82F6 !important;
-    transition: transform 0.2s;
-}
-
-.n8n-chat .chat-input-send-button:hover {
-    transform: translateX(3px) scale(1.1);
-    color: #60a5fa !important;
+[data-theme="dark"] .n8n-chat .chat-inputs textarea {
+    background-color: rgba(15, 23, 42, 0.5) !important;
+    border-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 /* Mobile Responsiveness */
 @media (max-width: 480px) {
     .n8n-chat {
-        right: 0 !important;
-        bottom: 0 !important;
-        width: 100% !important;
+        left: 10px !important;
+        bottom: 10px !important;
     }
 
     .n8n-chat .chat-window {
-        width: 100% !important;
-        height: 100vh !important;
-        border-radius: 0 !important;
+        width: calc(100vw - 20px) !important;
+        height: 70vh !important;
     }
 }

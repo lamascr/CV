@@ -452,7 +452,7 @@ function getTranslations() {
 
             // Footer
             'footer-text': 'Gracias por visitar mi portafolio. Siempre estoy interesado en nuevas oportunidades y proyectos emocionantes.',
-            'footer-copyright': '© 2025 Carlos Lamas. Todos los derechos reservados.'
+            'footer-copyright': '© 2026 Carlos Lamas. Todos los derechos reservados.'
         },
         en: {
             // Navigation
@@ -503,7 +503,7 @@ function getTranslations() {
             // Education
             'education-title': 'Education',
             'education-subtitle': 'My academic training and certifications',
-            'education-1-year': 'Jul 2025 - Present',
+            'education-1-year': 'Jul 2026 - Present',
             'education-1-degree': 'Master\'s Degree in Maintenance Engineering',
             'education-1-institution': 'Polytechnic University of Valencia (UPV)',
             'education-1-description': 'Competencies in reliability management (RAMS), predictive and condition-based maintenance, economic management, and strategy design.',
@@ -557,7 +557,9 @@ function getTranslations() {
 
             // Footer
             'footer-text': 'Thank you for visiting my portfolio. I am always interested in new opportunities and exciting projects.',
-            'footer-copyright': '© 2025 Carlos Lamas. All rights reserved.'
+            'footer-copyright': '© 2026 Carlos Lamas. All rights reserved.'
+            //chatbot 
+
         }
     };
 }

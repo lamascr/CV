@@ -28,6 +28,7 @@ function initializeApp() {
     initMagneticEffect();
     initSpotlight();
     initScrollSpy();
+    initAboutCarousel();
 
     // Configurar el tema inicial
     const savedTheme = localStorage.getItem('theme') || 'light';
@@ -373,9 +374,9 @@ function getTranslations() {
             'about-intro-title': 'Ingeniero Mecánico Especialista en Calidad y Mantenimiento',
             'about-text-1': 'Como ingeniero mecánico especializado en diseño CAD, análisis estructural y control de calidad, me enfoco en maximizar la fiabilidad y seguridad de activos industriales mediante la ingeniería de mantenimiento y gestión operativa.',
             'about-text-2': 'He desarrollado mi carrera en sectores clave como la educación superior y la industria de válvulas, especializándome en la gestión de proyectos de energía renovable y sistemas mecánicos complejos bajo normas ISO 9001.',
-            'about-stat-1-number': '5+',
+            'about-stat-1-number': '2+',
             'about-stat-1-label': 'Años de Experiencia',
-            'about-stat-2-number': '10+',
+            'about-stat-2-number': '5+',
             'about-stat-2-label': 'Proyectos Completados',
             'about-stat-3-number': '3',
             'about-stat-3-label': 'Idiomas',
@@ -478,9 +479,9 @@ function getTranslations() {
             'about-intro-title': 'Mechanical Engineer Specialist in Quality and Maintenance',
             'about-text-1': 'As a mechanical engineer specializing in CAD design, structural analysis, and quality control, I focus on maximizing the reliability and safety of industrial assets through maintenance engineering and operational management.',
             'about-text-2': 'I have developed my career in key sectors such as higher education and the valve industry, specializing in the management of renewable energy projects and complex mechanical systems under ISO 9001 standards.',
-            'about-stat-1-number': '5+',
+            'about-stat-1-number': '2+',
             'about-stat-1-label': 'Years of Experience',
-            'about-stat-2-number': '10+',
+            'about-stat-2-number': '5+',
             'about-stat-2-label': 'Completed Projects',
             'about-stat-3-number': '3',
             'about-stat-3-label': 'Languages',
@@ -635,7 +636,111 @@ function initParallaxEffects() {
         });
     });
 }
+// ============================================
+// CARRUSEL DE LA SECCIÓN ABOUT
+// ============================================
+function initAboutCarousel() {
+    const carousel = document.querySelector('.about-carousel');
+    if (!carousel) return;
 
+    const container = carousel.querySelector('.carousel-container');
+    const slides = carousel.querySelectorAll('.carousel-slide');
+    const prevBtn = carousel.querySelector('.carousel-control.prev');
+    const nextBtn = carousel.querySelector('.carousel-control.next');
+    const indicators = carousel.querySelectorAll('.indicator');
+
+    let currentIndex = 0;
+    let autoplayInterval;
+
+    function updateCarousel() {
+        // Mover contenedor
+        container.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+        // Actualizar estados activos
+        slides.forEach((slide, index) => {
+            slide.classList.toggle('active', index === currentIndex);
+        });
+
+        indicators.forEach((indicator, index) => {
+            indicator.classList.toggle('active', index === currentIndex);
+        });
+    }
+
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateCarousel();
+    }
+
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateCarousel();
+    }
+
+    function startAutoplay() {
+        stopAutoplay();
+        autoplayInterval = setInterval(nextSlide, 5000);
+    }
+
+    function stopAutoplay() {
+        if (autoplayInterval) clearInterval(autoplayInterval);
+    }
+
+    // Eventos de controles
+    if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+            nextSlide();
+            startAutoplay();
+        });
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+            prevSlide();
+            startAutoplay();
+        });
+    }
+
+    // Eventos de indicadores
+    indicators.forEach((indicator, index) => {
+        indicator.addEventListener('click', () => {
+            currentIndex = index;
+            updateCarousel();
+            startAutoplay();
+        });
+    });
+
+    // Pausar al pasar el ratón
+    carousel.addEventListener('mouseenter', stopAutoplay);
+    carousel.addEventListener('mouseleave', startAutoplay);
+
+    // Soporte para gestos táctiles
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    carousel.addEventListener('touchstart', (e) => {
+        touchStartX = e.changedTouches[0].screenX;
+        stopAutoplay();
+    }, { passive: true });
+
+    carousel.addEventListener('touchend', (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        handleSwipe();
+        startAutoplay();
+    }, { passive: true });
+
+    function handleSwipe() {
+        const threshold = 50;
+        if (touchEndX < touchStartX - threshold) {
+            nextSlide();
+        } else if (touchEndX > touchStartX + threshold) {
+            prevSlide();
+        }
+    }
+
+    // Inicializar
+    updateCarousel();
+    startAutoplay();
+}
 
 // ============================================
 // SCROLL PROGRESS BAR

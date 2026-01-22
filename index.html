@@ -224,21 +224,11 @@
 
                         <div class="hero-image animate-on-scroll">
                             <div class="image-wrapper">
-                                <div class="hero-ring-decoration">
-                                    <svg viewBox="0 0 100 100">
-                                        <circle cx="50" cy="50" r="48" fill="none" stroke="currentColor"
-                                            stroke-width="0.5" stroke-dasharray="2 4" />
-                                    </svg>
-                                </div>
+
                                 <div class="image-container">
-                                    <img src="imgs/profile_photo_6.jpg" alt="Carlos Lamas - Ingeniero Mecánico"
+                                    <img src="imgs/profile_photo_6.png" alt="Carlos Lamas - Ingeniero Mecánico"
                                         class="hero-profile-img">
-                                    <div class="image-overlay">
-                                        <!--<div class="status-indicator online">
-                                            <span class="status-dot"></span>
-                                            <span class="status-text"
-                                                data-translate="hero-availability">Disponible</span>-->
-                                    </div>
+
                                 </div>
                             </div>
                         </div>
@@ -276,14 +266,14 @@
                                 <div class="stat-icon">
                                     <i class="fas fa-calendar-alt"></i>
                                 </div>
-                                <div class="stat-number" data-translate="about-stat-1-number">5+</div>
+                                <div class="stat-number" data-translate="about-stat-1-number">2+</div>
                                 <div class="stat-label" data-translate="about-stat-1-label">Años de Experiencia</div>
                             </div>
                             <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
                                 <div class="stat-icon">
                                     <i class="fas fa-tasks"></i>
                                 </div>
-                                <div class="stat-number" data-translate="about-stat-2-number">10+</div>
+                                <div class="stat-number" data-translate="about-stat-2-number">5+</div>
                                 <div class="stat-label" data-translate="about-stat-2-label">Proyectos Completados</div>
                             </div>
                             <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
@@ -304,10 +294,42 @@
                     </div>
 
                     <div class="about-image animate-on-scroll">
-                        <div class="image-grid">
-                            <img src="imgs/cad_software_5.jpg" alt="Diseño CAD - Carlos Lamas"
-                                class="about-img main-image">
-                            <img src="imgs/blueprints_0.jpg" alt="Planos técnicos" class="about-img secondary-image">
+                        <div class="about-carousel">
+                            <div class="carousel-container">
+                                <div class="carousel-slide active">
+                                    <img src="imgs/cad_software_5.jpg" alt="Diseño CAD" class="carousel-img">
+                                    <div class="carousel-caption">Ingeniería CAD Avanzada</div>
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="imgs/blueprints_0.jpg" alt="Planos Técnicos" class="carousel-img">
+                                    <div class="carousel-caption">Planificación y Diseño Técnico</div>
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="imgs/maintenance_engineering_2.jpg" alt="Mantenimiento Industrial"
+                                        class="carousel-img">
+                                    <div class="carousel-caption">Gestión de Activos Industriales</div>
+                                </div>
+                                <div class="carousel-slide">
+                                    <img src="imgs/cad_software_7.webp" alt="Modelado 3D" class="carousel-img">
+                                    <div class="carousel-caption">Simulación y Análisis FEA</div>
+                                </div>
+                            </div>
+
+                            <!-- Controls -->
+                            <button class="carousel-control prev" aria-label="Anterior">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <button class="carousel-control next" aria-label="Siguiente">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+
+                            <!-- Indicators -->
+                            <div class="carousel-indicators">
+                                <span class="indicator active" data-index="0"></span>
+                                <span class="indicator" data-index="1"></span>
+                                <span class="indicator" data-index="2"></span>
+                                <span class="indicator" data-index="3"></span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -499,7 +521,7 @@
                             </div>
                         </div>
                         <div class="skill-showcase">
-                            <img src="imgs/cad_software_7.webp" alt="Software CAD" class="skills-image">
+                            <img src="imgs/hero_background_6.jpg" alt="Software CAD" class="skills-image">
                         </div>
                     </div>
 
@@ -540,6 +562,9 @@
                                 <div class="skill-bar">
                                     <div class="skill-progress" data-level="75"></div>
                                 </div>
+                            </div>
+                            <div class="skill-showcase">
+                                <img src="imgs/cad_software_7.webp" alt="Software CAD" class="skills-image">
                             </div>
                         </div>
                     </div>
@@ -1046,6 +1071,12 @@
             <li><kbd>Ctrl/Cmd</kbd> + <kbd>S</kbd>: Imprimir página</li>
         </ul>
     </div>
+    <!-- n8n Chat Widget -->
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+    <link href="chatbot.css" rel="stylesheet" />
+
+    <div id="n8n-chat" class="n8n-chat"></div>
+    <script type="module" src="chatbot.js"></script>
 </body>
 
 </html>

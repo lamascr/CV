@@ -19,7 +19,7 @@ function initializeApp() {
     initParallaxEffects();
 
     // Configurar el tema inicial
-    const savedTheme = localStorage.getItem('theme') || 'light';
+    const savedTheme = localStorage.getItem('theme') || 'dark';
     setTheme(savedTheme);
 
     // Configurar idioma inicial
@@ -272,9 +272,9 @@ function getTranslations() {
             'about-intro-title': 'Ingeniero Mecánico Especialista en Calidad y Mantenimiento',
             'about-text-1': 'Como ingeniero mecánico especializado en diseño CAD, análisis estructural y control de calidad, me enfoco en maximizar la fiabilidad y seguridad de activos industriales mediante la ingeniería de mantenimiento y gestión operativa.',
             'about-text-2': 'He desarrollado mi carrera en sectores clave como la educación superior y la industria de válvulas, especializándome en la gestión de proyectos de energía renovable y sistemas mecánicos complejos bajo normas internacionales de calidad.',
-            'about-stat-1-number': '5+',
+            'about-stat-1-number': '2+',
             'about-stat-1-label': 'Años de Experiencia',
-            'about-stat-2-number': '10+',
+            'about-stat-2-number': '5+',
             'about-stat-2-label': 'Proyectos Completados',
             'about-stat-3-number': '3',
             'about-stat-3-label': 'Idiomas',
@@ -379,7 +379,7 @@ function getTranslations() {
             'about-text-2': 'I have developed my career in key sectors such as higher education and the valve industry, specializing in the management of renewable energy projects and complex mechanical systems under international quality standards.',
             'about-stat-1-number': '5+',
             'about-stat-1-label': 'Years of Experience',
-            'about-stat-2-number': '10+',
+            'about-stat-2-number': '5+',
             'about-stat-2-label': 'Completed Projects',
             'about-stat-3-number': '3',
             'about-stat-3-label': 'Languages',

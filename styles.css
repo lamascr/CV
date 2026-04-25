@@ -1621,6 +1621,112 @@ body::before {
 }
 
 /* ============================================
+   CERTIFICATIONS SECTION
+   ============================================ */
+.certifications {
+    background: var(--page-background);
+}
+
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-xl);
+    margin-top: var(--space-xl);
+}
+
+.cert-card {
+    background: var(--glass-background);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-lg);
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-md);
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.cert-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--gradient-primary);
+}
+
+.cert-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--primary-200);
+}
+
+.cert-icon {
+    font-size: 2rem;
+    color: var(--primary-500);
+    flex-shrink: 0;
+}
+
+.cert-info {
+    flex-grow: 1;
+}
+
+.cert-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: var(--space-xs);
+    font-family: var(--font-heading);
+}
+
+.cert-org {
+    font-size: 0.9rem;
+    color: var(--primary-500);
+    font-weight: 600;
+    margin-bottom: var(--space-xs);
+}
+
+.cert-description {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+/* ============================================
+   LINKEDIN SECTION
+   ============================================ */
+.linkedin {
+    background: var(--surface-background);
+}
+
+.linkedin-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: var(--space-xl);
+    margin-top: var(--space-xl);
+}
+
+.linkedin-card {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    height: 400px;
+    background: var(--card-background);
+    transition: all var(--transition-normal);
+    border: 1px solid var(--glass-border);
+}
+
+.linkedin-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+.linkedin-card iframe {
+    border-radius: var(--radius-md);
+}
+
+/* ============================================
    CONTACT SECTION
    ============================================ */
 .contact {
